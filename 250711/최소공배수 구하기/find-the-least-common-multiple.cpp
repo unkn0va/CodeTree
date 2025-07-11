@@ -11,7 +11,7 @@ void num(int n, int m) {
     for (int i = 2; i <= max_val; i++) {
         result = min_val * i;
         if (result % max_val == 0) {
-            cout << min_val;
+            cout << result;
             break;
         }
     }
