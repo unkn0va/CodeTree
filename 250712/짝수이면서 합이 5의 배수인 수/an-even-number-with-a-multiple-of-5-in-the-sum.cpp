@@ -16,6 +16,6 @@ int main() {
 
     // Please write your code here.
     if (number(n)) cout << "Yes";
-    else "No";
+    else cout << "No";
     return 0;
 }
