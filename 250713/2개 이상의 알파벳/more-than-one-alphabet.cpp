@@ -12,9 +12,6 @@ bool two(string *s) {
         cnt = 0;
         for (int j = i+1; j < len; j++) {
             if ((*s)[i] != (*s)[j]) {
-                cnt++;
-            }
-            if (cnt == 2) {
                 right = false;
                 return right;
             }
