@@ -19,6 +19,7 @@ class Number {
 };
 
 bool cmp(Number a, Number b) {
+    if (a.n == b.n) return a.num < b.num;
     return a.n < b.n;
 }
 
