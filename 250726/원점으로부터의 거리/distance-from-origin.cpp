@@ -22,6 +22,7 @@ class Spot {
 };
 
 bool cmp(Spot a, Spot b) {
+    if (abs(a.x) + abs(a.y) == abs(b.x) + abs(b.y)) return a.number < b.number;
     return abs(a.x) + abs(a.y) < abs(b.x) + abs(b.y);
 }
 
