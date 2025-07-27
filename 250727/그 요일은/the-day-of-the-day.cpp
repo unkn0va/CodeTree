@@ -30,7 +30,13 @@ int main() {
             break;
         }
     }
-    diff -= idx;
-    cout << diff / 7 + 1;
+    if (diff == 0) {
+        if (A == "Mon") cout << 1;
+        else cout << 0;
+    }
+    else {
+        diff -= idx;
+        cout << diff / 7 + 1;
+    } 
     return 0;
 }
