@@ -11,7 +11,7 @@ int main() {
     int cnt = 0, binary[20] = {}, num = 0;
     while (1) {
         if (N < B) {
-            binary[cnt++] = N % 2;
+            binary[cnt++] = N % B;
             break;
         }
         binary[cnt++] = N % B;
