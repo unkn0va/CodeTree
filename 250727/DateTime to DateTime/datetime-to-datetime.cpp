@@ -11,6 +11,8 @@ int main() {
     int start, end;
     start = 60*24*11 + 60*11 + 11;
     end = 60*24*a + 60*b + c;
-    cout << end - start;
+    
+    if (end < start) cout << -1;
+    else cout << end - start;
     return 0;
 }
