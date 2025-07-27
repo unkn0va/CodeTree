@@ -10,17 +10,20 @@ int main() {
     // Please write your code here.
     int arr[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int start = 0, end = 0;
+    if (m1 == m2 && d1 == d2) cout << 1;
+    else {
+        for (int i = 0; i < m1; i++) {
+            start += arr[i];
+        }
+        for (int i = 0; i < m2; i++) {
+            end += arr[i];
+        }
+        start += d1;
+        end += d2;
 
-    for (int i = 0; i < m1; i++) {
-        start += arr[i];
+        cout << end - start;
     }
-    for (int i = 0; i < m2; i++) {
-        end += arr[i];
-    }
-    start += d1;
-    end += d2;
-
-    cout << end - start;
+    
 
     return 0;
 }
