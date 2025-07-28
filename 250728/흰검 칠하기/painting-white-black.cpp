@@ -32,10 +32,10 @@ int main() {
                     color[j] = 3;
                 }
             }
-            cur += x[i];
+            cur = cur + x[i] - 1;
         }
         else {
-            for (int j = cur-1; j >= cur-x[i]; j--) {
+            for (int j = cur; j > cur-x[i]; j--) {
                 if (g[j] == 1) continue;
                 else {
                     w[j]++;
@@ -47,7 +47,7 @@ int main() {
                     color[j] = 3;
                 }
             }
-            cur -= x[i];
+            cur = cur - x[i] + 1;
         }
     }
 
