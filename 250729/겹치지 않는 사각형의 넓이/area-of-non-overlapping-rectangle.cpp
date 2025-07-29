@@ -33,7 +33,7 @@ int main() {
     }
 
     for (int i = 0; i < 2001; i++) {
-        for (int j = 0; j < 2002; j++) {
+        for (int j = 0; j < 2001; j++) {
             if (blocks[i][j] == 1) total++;
         }
     }
