@@ -10,7 +10,7 @@ int main() {
     cin >> x1[1] >> y1[1] >> x2[1] >> y2[1];
 
     // Please write your code here.
-    int blocks[2001][2001] = {}, minx = 2000, miny = 2000, maxx = 0, maxy = 0;
+    int blocks[2001][2001] = {}, minx = 2001, miny = 2001, maxx = 0, maxy = 0;
     bool c = false;
     for (int i = 0; i < 2; i++) {
         x1[i] += 1000;
@@ -41,8 +41,9 @@ int main() {
             }
         }
     }
-    cout << (maxx-minx + 1) * (maxy-miny + 1);
-
+    if (minx == 2001 && miny == 2001) cout << 0;
+    else cout << (maxx-minx + 1) * (maxy-miny + 1);
+    //cout << minx << " " << miny << " " << maxx << " " << maxy;
 
     return 0;
 }
