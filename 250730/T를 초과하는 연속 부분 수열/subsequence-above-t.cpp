@@ -15,20 +15,22 @@ int main() {
 
     // Please write your code here.
     for (int i = 0; i < n; i++) {
-        if (arr[0] > t || (arr[i] > t && arr[i-1] < arr[i])) {
-            cnt++;
-        }
-        else if (arr[i] < t) {
-            cnt = 0;
+        if (arr[i] > t) {
+            if (i == 0 || arr[i-1] > t) {
+                cnt++;
+            }
+            else {
+                cnt = 1;
+            }
         }
         else {
-            cnt = 1;
+            cnt = 0;
         }
 
         ans = max(cnt, ans);
     }
-
-    cout << ans;
+    if (ans == 0) cout << 0;
+    else cout << ans;
 
     return 0;
 }
