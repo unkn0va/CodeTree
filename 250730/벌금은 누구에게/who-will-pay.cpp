@@ -3,7 +3,7 @@
 using namespace std;
 
 int N, M, K;
-int student[10000];
+int student[10000] = {};
 int penalty[101] = {};
 
 int main() {
@@ -20,6 +20,7 @@ int main() {
         if (penalty[student[i]] >= K) {
             find = true;
             cout << student[i];
+            break;
         }
     }
     if (find == false) cout << -1;
