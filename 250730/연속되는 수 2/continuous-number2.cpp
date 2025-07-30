@@ -7,7 +7,7 @@ int arr[1000];
 
 int main() {
     cin >> N;
-    int cnt = 0, blocks[1001] = {}, max_val = 0;
+    int cnt = 0, blocks[1001] = {}, max_val = 1;
     for (int i = 0; i < N; i++) {
         cin >> arr[i];
     }
