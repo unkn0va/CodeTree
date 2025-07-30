@@ -8,10 +8,11 @@ char d[1000];
 int t[1000];
 char d2[1000];
 int t2[1000];
+int times1[1000001] = {}, times2[1000001] = {};
 
 int main() {
     cin >> n >> m;
-    int times1[1001] = {}, times2[1001] = {}, cur_time1 = 1, count1 = 0, cur_time2 = 1, count2 = 0;
+    int cur_time1 = 1, count1 = 0, cur_time2 = 1, count2 = 0;
     bool right = false;
 
     for (int i = 0; i < n; i++) {
