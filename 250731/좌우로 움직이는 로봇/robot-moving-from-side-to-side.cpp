@@ -52,15 +52,24 @@ int main() {
             cnt2 += t_b[i];
         }
     }
-    //for (int i = 0; i < 30; i++) {
-        //cout << times1[i] << " ";
-    //}
-    //cout << endl;
-    //for (int i = 0; i < 30; i++) {
-        //cout << times2[i] << " ";
-    //}
-    //cout << endl;
-    for (int i = 1; i <= max(cnt1, cnt2); i++) {
+
+    for (int i = cnt1; i < max(cnt1, cnt2); i++) {
+        times1[i] = cur1;
+    }
+    for (int i = cnt2; i < max(cnt1, cnt2); i++) {
+        times2[i] = cur2;
+    }
+    /*
+    for (int i = 0; i < 1000; i++) {
+        cout << times1[i] << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < 1000; i++) {
+        cout << times2[i] << " ";
+    }
+    cout << endl;
+    */
+    for (int i = 1; i < max(cnt1, cnt2); i++) {
         if (times1[i] == times2[i] && times1[i-1] != times2[i-1]) {
             //cout << i << endl;
             total++;
