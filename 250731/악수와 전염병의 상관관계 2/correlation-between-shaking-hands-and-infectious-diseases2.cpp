@@ -39,9 +39,9 @@ int main() {
     sort(d, d + T, cmp);
 
     for (int i = 0; i < T; i++) {
-        if ((get[d[i].x] == 1 && mv[d[i].x] < 2) || (get[d[i].y] == 1 && mv[d[i].y] < 2)) {
-            if (get[d[i].x] == 1 && mv[d[i].x] < 2) mv[d[i].x]++;
-            if (get[d[i].y] == 1 && mv[d[i].y] < 2) mv[d[i].y]++;
+        if ((get[d[i].x] == 1 && mv[d[i].x] < K) || (get[d[i].y] == 1 && mv[d[i].y] < K)) {
+            if (get[d[i].x] == 1 && mv[d[i].x] < K) mv[d[i].x]++;
+            if (get[d[i].y] == 1 && mv[d[i].y] < K) mv[d[i].y]++;
             get[d[i].x] = 1;
             get[d[i].y] = 1;  
         }
