@@ -27,26 +27,25 @@ bool inRange(int x, int y) {
 int main() {
     cin >> n >> t;
     cin >> r >> c >> d;
-    int ax = r, ay = c, x = r, y = c;
+    int ax = r-1, ay = c-1, x = r-1, y = c-1, num = mv(d);
 
     int dx[4] = {-1, 0, 0, 1}, dy[4] = {0, 1, -1, 0};
 
     // Please write your code here.
     for (int i = 0; i < t; i++) {
-        int num = mv(d);
         ax += dx[num], ay += dy[num];
         if (!inRange(ax, ay)) {
             num = 3 - num;
-            d = dir(num);
-            x += dx[num];
-            y += dy[num];
+            
+            ax += dx[num];
+            ay += dy[num];
         }
             
-        x += dx[num], y += dy[num];
+        x = ax, y = ay;
         
     }
 
-    cout << x << " " << y;
+    cout << x+1 << " " << y+1;
 
     return 0;
 }
