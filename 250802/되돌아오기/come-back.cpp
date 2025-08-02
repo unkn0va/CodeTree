@@ -30,8 +30,10 @@ int main() {
             x += dx[d], y += dy[d];
             if (x == 0 && y == 0) {
                 index = time;
+                break;
             }
         }
+        if (index != -1) break;
     }
 
     cout << index;
