@@ -40,7 +40,7 @@ int main() {
     cin >> k;
 
     // Please write your code here.
-    int dir = (k - 1) / n, cnt = 1;
+    int dir = (k - 1) / n, cnt = 0;
     if (k <= n) {
         s_x = (k-1) / n, s_y = (k-1) % n;
     }
@@ -57,7 +57,7 @@ int main() {
         s_y = 0;
         if (k % n == 1) s_x = n - 1;
         else if (k % n == 0) s_x = 0;
-        else s_y = (k+n-1) % n;
+        else s_x = (k+n-1) % n;
     }
 
     while (inRange(s_x, s_y)) {
@@ -67,6 +67,6 @@ int main() {
         cnt++;
     }
     
-    cout << cnt-1;
+    cout << cnt;
     return 0;
 }
