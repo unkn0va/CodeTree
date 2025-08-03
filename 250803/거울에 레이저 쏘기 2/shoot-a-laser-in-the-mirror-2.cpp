@@ -48,16 +48,10 @@ int main() {
         s_x = (k-1) % n, s_y = (n-1);
     }
     else if (k <= 3*n) {
-        s_x = (n-1);
-        if (k % n == 1) s_y = n - 1;
-        else if (k % n == 0) s_y = 0;
-        else s_y = (k+n-1) % n;
+        s_x = (n-1), s_y = (3*n) - k;
     }
     else {
-        s_y = 0;
-        if (k % n == 1) s_x = n - 1;
-        else if (k % n == 0) s_x = 0;
-        else s_x = (k+n-1) % n;
+        s_x = (4*n) - k, s_y = 0;
     }
 
     while (inRange(s_x, s_y)) {
