@@ -16,7 +16,6 @@ int main() {
     int val = INT_MIN, sum = 0;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N-2; j++) {
-            sum = 0;
             sum = grid[i][j] + grid[i][j+1] + grid[i][j+2];
             val = max(val, sum);
         }
