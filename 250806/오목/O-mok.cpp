@@ -10,6 +10,7 @@ int main() {
 
     // Please write your code here.
     int total = 0;
+    bool find = false;
     for (int i = 0; i < 19; i++) {
         for (int j = 0; j < 19; j++) {
             if (board[i][j] != 0) {
@@ -19,6 +20,7 @@ int main() {
                     else break;
 
                     if (total == 5) {
+                        find = true;
                         cout << board[i][j] << endl;
                         cout << i+1 << " " << j+3;
                     }
@@ -29,6 +31,7 @@ int main() {
                     else break;
 
                     if (total == 5) {
+                        find = true;
                         cout << board[i][j] << endl;
                         cout << i+3 << " " << j+1;
                     }
@@ -39,6 +42,7 @@ int main() {
                     else break;
 
                     if (total == 5) {
+                        find = true;
                         cout << board[i][j] << endl;
                         cout << i+3 << " " << j+3;
                     }
@@ -50,6 +54,7 @@ int main() {
                         else break;
 
                         if (total == 5) {
+                            find = true;
                             cout << board[i][j] << endl;
                             cout << i+3 << " " << j-1;
                         }
@@ -58,6 +63,8 @@ int main() {
             }
         }
     }
+
+    if (find == false) cout << 0;
 
     return 0;
 }
