@@ -9,7 +9,7 @@ char c[100];
 
 int main() {
     cin >> N >> K;
-    char placed[10001] = {};
+    char placed[20001] = {};
     int max_val = 0, ans = INT_MIN, total = 0;
 
     for (int i = 0; i < N; i++) {
@@ -21,7 +21,7 @@ int main() {
 
 
     // Please write your code here.
-    for (int i = 0; i <= max_val-K; i++) {
+    for (int i = 0; i <= max_val; i++) {
         total = 0;
         for (int j = 0; j <= K; j++) {
             if (placed[i+j] == 'G') total += 1;
