@@ -21,9 +21,9 @@ int main() {
 
 
     // Please write your code here.
-    for (int i = 0; i < max_val; i++) {
+    for (int i = 0; i <= max_val-K; i++) {
         total = 0;
-        for (int j = 0; j < 7; j++) {
+        for (int j = 0; j <= K; j++) {
             if (placed[i+j] == 'G') total += 1;
             else if (placed[i+j] == 'H') total += 2;
         }
