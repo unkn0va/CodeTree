@@ -27,7 +27,7 @@ int main() {
     else {
         for (int i = K; i <= max_val; i++) {
             sum = 0;
-            for (int j = abs(i-K); j <= i+K; j++) {
+            for (int j = i-K; j <= i+K; j++) {
                 sum += placed[j];
             }
             ans = max(sum, ans);
