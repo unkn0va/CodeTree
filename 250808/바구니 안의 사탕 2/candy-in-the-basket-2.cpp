@@ -14,16 +14,16 @@ int main() {
     for (int i = 0; i < N; i++) {
         cin >> candy[i] >> pos[i];
         max_val = max(pos[i], max_val);
-        placed[pos[i]] = candy[i];
+        placed[pos[i]] += candy[i];
     }
 
     // Please write your code here.
-    for (int i = K; i < max_val; i++) {
+    for (int i = K; i <= max_val; i++) {
         sum = 0;
         for (int j = i-K; j <= i+K; j++) {
             sum += placed[j];
-            ans = max(sum, ans);
         }
+        ans = max(sum, ans);
     }
 
     cout << ans;
