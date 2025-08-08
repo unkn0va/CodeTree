@@ -18,7 +18,7 @@ int main() {
     }
 
     // Please write your code here.
-    for (int i = K; i < max_val-K; i++) {
+    for (int i = K; i < max_val; i++) {
         sum = 0;
         for (int j = i-K; j <= i+K; j++) {
             sum += placed[j];
