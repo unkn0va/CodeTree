@@ -24,8 +24,8 @@ int main() {
     // Please write your code here.
     int min_diff = INT_MAX;
     for (int i = 0; i < 6; i++) {
-        for (int j = 0; j < 6; j++) {
-            for (int k = 0; k < 6; k++) {
+        for (int j = i+1; j < 6; j++) {
+            for (int k = j+1; k < 6; k++) {
                 min_diff = min(min_diff, getDiff(i, j, k));
             }
         }
