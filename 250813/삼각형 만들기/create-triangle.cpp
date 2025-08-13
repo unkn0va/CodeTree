@@ -1,5 +1,6 @@
 #include <iostream>
 #include <climits>
+#include <cmath>
 
 using namespace std;
 
@@ -19,35 +20,14 @@ int main() {
     for (int i = 0; i < N-2; i++) {
         for (int j = i+1; j < N-1; j++) {
             for (int k = j+1; k < N; k++) {
-                if ((x[i] != x[j] && x[j] != x[k]) || (y[i] != y[j] && y[j] != y[k])) continue;
+                int a = (x[i]-x[j])*(x[i]-x[j]) + (y[i]-y[j])*(y[i]-y[j]);
+                int b = (x[j]-x[k])*(x[j]-x[k]) + (y[j]-y[k])*(y[j]-y[k]);
+                int c = (x[i]-x[k])*(x[i]-x[k]) + (y[i]-y[k])*(y[i]-y[k]);
 
-                if (x[i] == x[j]) {
-                    if (y[i] == y[k]) {
-                        val = abs(y[j]-y[i]) * abs(x[i]-x[k]);
-                    }
-                    else if (y[j] == y[k]) {
-                        val = abs(y[j]-y[i]) * abs(x[j]-x[k]);
-                    }
-                    else val = 0;
-                }
-                else if (x[i] == x[k]) {
-                    if (y[i] == y[j]) {
-                        val = abs(y[k]-y[i]) * abs(x[i]-x[j]);
-                    }
-                    else if (y[k] == y[j]) {
-                        val = abs(y[k]-y[i]) * abs(x[k]-x[j]);
-                    }
-                    else val = 0;
-                }
-                else if (x[j] == x[k]) {
-                    if (y[j] == y[i]) {
-                        val = abs(y[j]-y[k]) * abs(x[i]-x[j]);
-                    }
-                    else if (y[k] == y[i]) {
-                        val = abs(y[j]-y[k]) * abs(x[k]-x[i]);
-                    }
-                    else val = 0;
-                }
+                if (a == b+c) val = sqrt(b)*sqrt(c);
+                else if (b == a+c) val = sqrt(a)*sqrt(c);
+                else if (c == a+b) val = sqrt(a)*sqrt(b);
+                else val = 0;
 
                 ans = max(val, ans);
             }
