@@ -16,6 +16,7 @@ int main() {
     // Please write your code here.
     int total = 0, ans = INT_MIN;
     for (int i = 0; i < N; i++) {
+        total = 0;
         total += P[i]/2;
         if (total > B) continue;
         int cnt = 1;
