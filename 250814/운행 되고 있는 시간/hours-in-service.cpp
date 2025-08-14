@@ -16,7 +16,7 @@ int main() {
     // Please write your code here.
     int t = 0, ans = INT_MIN;
     for (int i = 0; i < N; i++) {
-        int time[100] = {};
+        int time[1001] = {};
         t = 0;
         for (int j = 0; j < N; j++) {
             if (i == j) continue;
