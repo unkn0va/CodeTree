@@ -17,7 +17,22 @@ int main() {
     int cnt = 0;
     for (int i = 0; i < N-1; i++) {
         for (int j = i+1; j < N; j++) {
+            /*
+            if (x1[i] > x2[i]) {
+                if (x1[j] < x2[j]) {
+                    if (x1[i] > x1[j] && x2[i] < x2[j]) {
+                        check[i] = 1, check[j] = 1;
+                    }
+                }
+                else {
+
+                }
+            }
+            */
             if (x1[i] > x1[j] && x2[i] < x2[j]) {
+                check[i] = 1, check[j] = 1;
+            }
+            else if (x1[i] < x1[j] && x2[i] > x2[j]) {
                 check[i] = 1, check[j] = 1;
             }
         }
