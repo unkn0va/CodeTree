@@ -13,10 +13,15 @@ int main() {
     }
 
     // Please write your code here.
-    int val = -2, ans = -1;
-    for (int i = 0; i < N-K; i++) {
-        for (int j = i+1; j <= i+K; j++) {
-            if (num[i] == num[j]) val = num[i];
+    int val = -5, ans = -1;
+    for (int i = 0; i < N-1; i++) {
+        for (int j = i+1; j < N; j++) {
+            if (j > i+K) break;
+
+            if (num[i] == num[j]) {
+                val = num[i];
+                break;
+            }
         }
         ans = max(val, ans);
     }
