@@ -8,7 +8,7 @@ int a[100];
 
 int main() {
     cin >> n;
-    int cnt = 0, min_val = INT_MAX, max_val = INT_MIN;
+    int cnt = 0, min_val = INT_MAX, max_val = INT_MIN, ans = INT_MIN;
 
     for (int i = 0; i < n; i++) {
         cin >> a[i];
@@ -19,6 +19,7 @@ int main() {
     // Please write your code here.
     for (int i = min_val+1; i < max_val; i++) {
         int num[100] = {};
+        cnt = 0;
         for (int j = 0; j < n; j++) {
             num[j] = abs(i-a[j]);
         }
@@ -27,13 +28,14 @@ int main() {
             for (int k = j+1; k < n; k++) {
                 if (num[j] == num[k]) {
                     cnt++;
-                    break;
                 }
             }
         }
+
+        ans = max(ans, cnt);
     }
 
-    cout << cnt;
+    cout << ans;
 
     return 0;
 }
