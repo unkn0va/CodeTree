@@ -21,7 +21,9 @@ int main() {
             sum_diff = 0;
             for (int k = 0; k < n-1; k++) {
                 if (j == k) continue;
-                sum_diff += abs(arr[k+1]-arr[k]);
+                
+                if (k+1 == j) sum_diff += abs(arr[k+2]-arr[k]);
+                else sum_diff += abs(arr[k+1]-arr[k]);
             }
 
             ans = min(sum_diff, ans);
