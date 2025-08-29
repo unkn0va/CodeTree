@@ -19,11 +19,11 @@ int main() {
         min_y = min(y[i], min_y);
         max_y = max(y[i], max_y);
     }
-
+    
     // Please write your code here.
     int val, ans = INT_MAX;
-    for (int i = min_y+1; i <= max_y+1; i++) {
-        for (int j = min_x+1; j <= max_x+1; j++) {
+    for (int i = min_y+1; i <= max_y+1; i+=2) {
+        for (int j = min_x+1; j <= max_x+1; j+=2) {
             int cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0;
             for (int k = 0; k < n; k++) {
                 if (x[k] > j && y[k] > i) cnt1++;
