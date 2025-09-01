@@ -24,7 +24,10 @@ int main() {
                 check = true;
                 continue;
             }
-            check = false;            
+            else {
+                check = false;
+                break;
+            }            
         }
         if (check == true) {
             cout << num;
