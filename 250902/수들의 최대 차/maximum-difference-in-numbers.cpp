@@ -18,9 +18,9 @@ int main() {
     int cnt, ans = INT_MIN;
     sort(arr, arr+N);
     for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+        for (int j = i+1; j < N; j++) {
             if (arr[j] > arr[i]+K) {
-                cnt = j;
+                cnt = j-i;
                 break;
             }
         }
