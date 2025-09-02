@@ -15,14 +15,15 @@ int main() {
     }
 
     // Please write your code here.
-    int cnt, ans = INT_MIN;
+    int cnt = 0, ans = INT_MIN;
     sort(arr, arr+N);
     for (int i = 0; i < N; i++) {
+        cnt = 1;
         for (int j = i+1; j < N; j++) {
-            if (arr[j] > arr[i]+K) {
-                cnt = j-i;
-                break;
+            if (arr[j] <= arr[i]+K) {
+                cnt++;
             }
+            else break;
         }
         ans = max(cnt, ans);
     }
