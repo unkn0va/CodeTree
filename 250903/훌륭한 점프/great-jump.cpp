@@ -32,7 +32,7 @@ int main() {
 
     // Please write your code here.
     int ans = INT_MAX;
-    for (int i = n; i >= max(arr[0], arr[n-1]); i--) {
+    for (int i = 100; i >= max(arr[0], arr[n-1]); i--) {
         if (isPossible(i)) ans = min(ans, i);
     }
 
