@@ -33,7 +33,8 @@ int main() {
 
     int ans = 0;
 
-    for (int i = 0; i < max_val; i++) {
+    for (int i = 0; i <= max_val; i++) {
+        //cout << arr[i] << endl;
         if (arr[i] >= ans) ans = i;
     }
 
