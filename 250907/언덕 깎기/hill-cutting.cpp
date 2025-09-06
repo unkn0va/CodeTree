@@ -17,8 +17,8 @@ int main() {
     }
 
     // Please write your code here.
-    for (int i = min_val+1; i <= max_val; i++) {
-        for (int j = max_val-1; j > i; j--) {
+    for (int i = min_val; i <= max_val; i++) {
+        for (int j = max_val; j > i; j--) {
             if (j-i > 17) continue;
             
             val = 0;
