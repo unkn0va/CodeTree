@@ -14,21 +14,18 @@ int main() {
 
     // Please write your code here.
     for (int i = 1; i <= n; i++) {
-        int val[1000] = {};
+        int val[1001] = {};
         val[0] = i;
-        int check[1000] = {};
+        bool check[1001] = {};
         bool c = true;
         for (int j = 1; j < n; j++) {
             val[j] = adjacent[j-1]-val[j-1];
-            if (val[j] > n || val[j] < 1) {
+            if (val[j] > n || val[j] < 1 || check[val[j]]) {
                 c = false;
                 break;
             }
-            if (check[val[j]] != 0) {
-                c = false;
-                break;
-            }
-            check[val[j]] = 1;
+            
+            check[val[j]] = true;
         }
 
         if (c == true) {
