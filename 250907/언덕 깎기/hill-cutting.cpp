@@ -1,5 +1,6 @@
 #include <iostream>
 #include <climits>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,10 +17,16 @@ int main() {
     }
 
     // Please write your code here.
-    for (int i = min_val; i <= max_val; i++) {
-        for (int j = max_val; j >= min_val; j--) {
+    for (int i = min_val+1; i <= max_val; i++) {
+        for (int j = max_val-1; j > i; j--) {
             if (j-i > 17) continue;
-            val = (max_val-j) * (max_val-j) + (i-min_val) * (i-min_val);
+            
+            val = 0;
+            for (int k = 0; k < N; k++) {
+                if (heights[k] < i) val += (i-heights[k]) * (i-heights[k]);
+                if (heights[k] > j) val += (heights[k]-j) * (heights[k]-j);
+            }
+            
             ans = min(val, ans);
         }
     }
