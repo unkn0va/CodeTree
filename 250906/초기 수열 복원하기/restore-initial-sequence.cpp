@@ -20,6 +20,10 @@ int main() {
         bool c = true;
         for (int j = 1; j < n; j++) {
             val[j] = adjacent[j-1]-val[j-1];
+            if (val[j] > n || val[j] < 1) {
+                c = false;
+                break;
+            }
             if (check[val[j]] != 0) {
                 c = false;
                 break;
