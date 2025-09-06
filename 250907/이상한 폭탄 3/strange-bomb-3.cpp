@@ -35,7 +35,7 @@ int main() {
 
     for (int i = 0; i <= max_val; i++) {
         //cout << arr[i] << endl;
-        if (arr[i] >= ans) ans = i;
+        if (arr[i] >= arr[ans] && arr[i] != 0) ans = i;
     }
 
     cout << ans;
