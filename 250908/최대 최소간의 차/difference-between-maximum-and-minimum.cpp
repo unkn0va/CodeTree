@@ -18,7 +18,7 @@ int main() {
     // Please write your code here.
     int ans = INT_MAX, cost;
     for (int i = min_val; i <= max_val; i++) {
-        for (int j = max_val; j >= i; j--) {
+        for (int j = max_val; j >= i+k; j--) {
             if (j-i > k) continue;
             cost = 0;
 
