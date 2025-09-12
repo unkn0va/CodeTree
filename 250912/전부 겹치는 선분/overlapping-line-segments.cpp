@@ -23,7 +23,7 @@ int main() {
     }
 
     for (int i = 0; i < 101; i++) {
-        if (arr[i] >= 3) {
+        if (arr[i] >= n) {
             check = true;
             break;
         }
