@@ -25,6 +25,11 @@ int main() {
         arr[cnt++] = c[i] - 'A';
     }
 
+    for (int i = p-2; i >= 0; i--) {
+        if (u[p-1] == u[i]) arr[cnt++] = c[i] - 'A';
+        else break;
+    }
+
     for (int j = 0; j < n; j++) {
         bool check = true;
         for (int k = 0; k < cnt; k++) {
