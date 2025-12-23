@@ -17,6 +17,10 @@ int main() {
     int arr[26] = {};
     int cnt = 0;
 
+    if (u[p-1] == 0) {
+        return 0;
+    }
+
     for (int i = p-1; i < m; i++) {
         arr[cnt++] = c[i] - 'A';
     }
