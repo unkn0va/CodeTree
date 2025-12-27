@@ -29,7 +29,10 @@ int main() {
                     if (k == (a[t] % 10)) f_cnt++;
                     else if (k == a[t] / 100 || k == (a[t] % 100) / 10) s_cnt++;
 
-                    if (f_cnt != b[t] || s_cnt != c[t]) check = false; 
+                    if (f_cnt != b[t] || s_cnt != c[t]) {
+                        check = false;
+                        break;
+                    } 
                 }
 
                 if (check == true) cnt++;
