@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 
 using namespace std;
 
@@ -8,7 +9,7 @@ int sick_p[50], sick_t[50];
 
 int main() {
     cin >> N >> M >> D >> S;
-    int cheeze[51] = {}, student[1001] = {}, sum = 0, cnt = 0;
+    int cheeze[51] = {}, student[1001] = {}, cnt = 0, result = 0;
 
     for (int i = 0; i < D; i++) {
         cin >> p[i] >> m[i] >> t[i];
@@ -16,25 +17,43 @@ int main() {
 
     for (int i = 0; i < S; i++) {
         cin >> sick_p[i] >> sick_t[i];
-        sum += sick_p[i];
     }
 
     // Please write your code here.
-    for (int i = 0; i < S; i++) {
+    for (int i = 1; i <= M; i++) {
+        cnt = 0;
+        for (int j = 0; j < S; j++) {
+            for (int k = 0; k < D; k++) {
+                if (p[k] == sick_p[j] && m[k] == i && t[k] < sick_t[j]) {
+                    cnt++;
+                    break;
+                }
+            }
+        }
+        if (cnt == S) {
+            cheeze[i] = 1;
+        }
+    }
+
+    for (int i = 1; i <= M; i++) {
+        if (cheeze[i] == 0) continue;
+        cnt = 0;
+        for (int j = 0; j < 1001; j++) {
+            student[j] = 0;
+        }
+
         for (int j = 0; j < D; j++) {
-            if (sick_p[i] == p[j] && sick_t[i] > t[j]) cheeze[m[j]] += p[j];
+            if (student[p[j]] == 0 && i == m[j]) {
+                student[p[j]] = 1;
+                cnt++;
+            }
         }
+
+        result = max(cnt, result);
+
     }
 
-
-    for (int i = 0; i < D; i++) {
-        if (student[p[i]] != 1 && cheeze[m[i]] != 0) {
-            student[p[i]] = 1;
-            cnt++;
-        }
-    }
-
-    cout << cnt;
-
+    cout << result;
+    
     return 0;
 }
