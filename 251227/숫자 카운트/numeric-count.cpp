@@ -11,9 +11,9 @@ int main() {
 
     // Please write your code here.
     int value = 0, cnt = 0;
-    for (int i = 1; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            for (int k = 0; k < 9; k++) {
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            for (int k = 1; k <= 9; k++) {
                 if (j == i || k == i || k == j) continue;
                 
                 bool check = true;
