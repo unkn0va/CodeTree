@@ -30,27 +30,21 @@ int main() {
                 }
             }
         }
-        if (cnt == S) {
-            cheeze[i] = 1;
-        }
-    }
-
-    for (int i = 1; i <= M; i++) {
-        if (cheeze[i] == 0) continue;
-        cnt = 0;
         for (int j = 0; j < 1001; j++) {
             student[j] = 0;
         }
 
-        for (int j = 0; j < D; j++) {
-            if (student[p[j]] == 0 && i == m[j]) {
-                student[p[j]] = 1;
-                cnt++;
+        if (cnt == S) {
+            cnt = 0;
+            for (int j = 0; j < D; j++) {
+                if (student[p[j]] == 0 && i == m[j]) {
+                    student[p[j]] = 1;
+                    cnt++;
+                }
             }
+
+            result = max(cnt, result);
         }
-
-        result = max(cnt, result);
-
     }
 
     cout << result;
