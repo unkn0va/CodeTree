@@ -19,25 +19,24 @@ bool check(int a, int b, int c) {
             }
         }
 
-        if (first_idx = -1) return true;
+        if (first_idx == -1) return true;
 
         int t_x = x[first_idx], t_y = y[first_idx];
 
         for (int j = 0; j < n; j++) {
             if (type[i] == 0) { // 세로선
-                if (x[j] == t_x) is_deleted[j] = false;
+                if (x[j] == t_x) is_deleted[j] = true;
             }
             else { // 가로선
-                if (y[j] == t_y) is_deleted[j] = false;
+                if (y[j] == t_y) is_deleted[j] = true;
             }
         }
-
-        for (int j = 0; j < n; j++) {
-            if (!is_deleted[j]) return false;
-        }
-
-        return true;
     }
+    for (int j = 0; j < n; j++) {
+        if (!is_deleted[j]) return false;
+    }
+    
+    return true;
 }
 
 int main() {
