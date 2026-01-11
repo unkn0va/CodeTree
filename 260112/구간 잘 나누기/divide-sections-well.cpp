@@ -25,7 +25,7 @@ int main() {
             else sum += arr[i];
         }
 
-        if (cnt == m) break;
+        if (cnt <= m) break;
         else max_val++;
     }
 
