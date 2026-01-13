@@ -7,18 +7,17 @@ int N, L;
 int a[100];
 
 int main() {
-    int min_val = INT_MAX, max_val = INT_MIN, old, result, diff, cnt = 0;
+    int max_val = INT_MIN, old, result, diff, cnt = 0;
     bool check = false;
     cin >> N >> L;
 
     for (int i = 0; i < N; i++) {
         cin >> a[i];
-        min_val = min(a[i], min_val);
-        max_val = max(a[i], min_val);
+        max_val = max(a[i], max_val);
     }
 
     // Please write your code here.
-    for (int i = max_val + 1; i >= min_val; i--) {
+    for (int i = max_val + 1; i >= 1; i--) {
         cnt = 0;
         for (int j = 0; j < N; j++) {
             if (a[j] >= i) cnt++;
