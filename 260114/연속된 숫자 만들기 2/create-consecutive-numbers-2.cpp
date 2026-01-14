@@ -25,7 +25,9 @@ int main() {
     }
     // case 3: 6 2 9 / 9 2 6 / 6 9 3 / 9 5 7 / 6 5 9
     else {
-        if (abs(pos[1] - pos[0]) == 2) cout << 1;
+        if (abs(pos[1] - pos[0]) == 1 && abs(pos[2] - pos[1]) == 2) cout << 0;
+        else if (abs(pos[2] - pos[1]) == 1 && abs(pos[1] - pos[0]) == 2) cout << 0;
+        else if (abs(pos[1] - pos[0]) == 2) cout << 1;
         else if (abs(pos[2] - pos[1]) == 2) cout << 1;
         else cout << 2;
     }
