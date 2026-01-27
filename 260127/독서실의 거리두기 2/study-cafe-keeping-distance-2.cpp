@@ -64,7 +64,7 @@ int main() {
     }
     else {
         cnt = 0;
-        for (int j = 1; j < N - 1; j++) {
+        for (int j = 1; j < N; j++) {
             if (seats[j] == '1') {
                         ans1 = max(ans1, cnt);
                         if (j > diff1) ans2 = min(ans2, cnt);
@@ -73,15 +73,16 @@ int main() {
             else cnt++;
         }
     }
-    
-    if (ans2 == 0) cout << 1;
+
+    if (ans1 < ans2) {
+        cout << max(diff1, diff2);
+    }
     else if (diff1 == 0 && diff2 == 0) {
         if (ans1 % 2 == 0) cout << min(ans1 / 2, ans2 + 1);
         else cout << min(ans1 / 2 + 1, ans2 + 1);
     }
     else if (diff1 != 0 && diff2 == 0) {
-        if (diff1 >= ans1) cout << ans2 + 1;
-        else if (diff1 <= ans2) {
+        if (diff1 <= ans2) {
             if (ans1 == ans2) {
                 if (diff1 < ans2 / 2 + 1) cout << ans2 / 2 + 1;
                 else cout << diff1;
@@ -89,10 +90,10 @@ int main() {
             else if (ans1 % 2 == 0) cout << min(ans1 / 2, ans2 + 1);
             else cout << min(ans1 / 2 + 1, ans2 + 1);
         }
+        else if (diff1 >= ans1) cout << ans2 + 1;
     }
     else if (diff1 == 0 && diff2 != 0) {
-        if (diff2 >= ans1) cout << ans2 + 1;
-        else if (diff2 <= ans2) {
+        if (diff2 <= ans2) {
             if (ans1 == ans2) {
                 if (diff2 < ans2 / 2 + 1) cout << ans2 / 2 + 1;
                 else cout << diff2;
@@ -100,6 +101,7 @@ int main() {
             else if (ans1 % 2 == 0) cout << min(ans1 / 2, ans2 + 1);
             else cout << min(ans1 / 2 + 1, ans2 + 1);
         }
+        else if (diff2 >= ans1) cout << ans2 + 1;
     }
     else {
         int diff = max(diff1, diff2);
