@@ -74,7 +74,8 @@ int main() {
         }
     }
     
-    if (diff1 == 0 && diff2 == 0) {
+    if (ans2 == 0) cout << 1;
+    else if (diff1 == 0 && diff2 == 0) {
         if (ans1 % 2 == 0) cout << min(ans1 / 2, ans2 + 1);
         else cout << min(ans1 / 2 + 1, ans2 + 1);
     }
