@@ -25,7 +25,9 @@ int main() {
     }
 
     // Please write your code here.
-    cout << abs(idx_r-r) + abs(idx_c-c) - 1;
+    if (idx_c == i_c && i_c == c) cout << abs(idx_r-r) + abs(idx_c-c) + 1;
+    else if (idx_r == i_r && i_r == r) cout << abs(idx_r-r) + abs(idx_c-c) + 1;
+    else cout << abs(idx_r-r) + abs(idx_c-c) - 1;
 
     return 0;
 }
